@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+      <Platform>AnyCPU</Platform>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+    <PropertyGroup>
+        <CsWinRTIncludes>ProtoWRC</CsWinRTIncludes>
+        <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
+    </PropertyGroup>
+    <PropertyGroup>
+        <GeneratedNugetDir>.\nuget\</GeneratedNugetDir>
+        <NuspecFile>$(GeneratedNugetDir)DxProjection.nuspec</NuspecFile>
+        <OutputPath>$(GeneratedNugetDir)</OutputPath>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+    <PropertyGroup>
+        <!-- Workaround for MSB3271 error on processor architecture mismatch -->
+        <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    </PropertyGroup>
+    <ItemGroup>
+      <None Include="nuget\DxProjection.nuspec" />
+    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProtoWRC\ProtoWRC.vcxproj" />
+  </ItemGroup>
+
+</Project>

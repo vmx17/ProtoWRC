@@ -1,0 +1,19 @@
+namespace ProtoWRC
+{
+    // See https://learn.microsoft.com/ja-jp/uwp/midl-3/intro
+    delegate void DxPointerRoutedEventHandler(Microsoft.UI.Xaml.Input.PointerRoutedEventArgs args); // delegate type, for an event.
+    //[default_interface]
+    runtimeclass Dx11BackEnd : Microsoft.UI.Xaml.Interop.INotifyCollectionChanged
+    {
+        Dx11BackEnd();
+        void Initialize(Int32 _width, Int32 _height);
+        void SetSwapChainToBackEnd(Microsoft.UI.Xaml.Controls.SwapChainPanel _panel);
+        void StartRendering();
+        void StopRendering();
+        void SetPointer(Microsoft.UI.Input.PointerPoint _p);
+        Double Width;
+        Double Height;
+        Single Px;
+        Single Py;
+    }
+}

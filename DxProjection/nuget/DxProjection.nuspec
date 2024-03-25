@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>ProtoWRC</id>
+        <version>0.1.0-prerelease</version>
+        <authors>vmx17</authors>
+        <description>A Cs-Cpp interop WRC</description>
+        <dependencies>
+            <group targetFramework="net8.0-windows10.0.22621.0" />
+            <group targetFramework=".NETCoreApp3.0" />
+            <group targetFramework="UAP10.0" />
+            <group targetFramework=".NETFramework4.8.1" />
+        </dependencies>
+    </metadata>
+    <files>
+        <!--Support .NET 6, .NET Core 3, UAP, .NET Framework 4.6, C++ -->
+        <!--Architecture-netural assemblies-->
+        <file src="..\..\_build\AnyCPU\Release\DxProjection\bin\DxProjection.dll" target="lib\net8.0-windows10.0.22621.0\DxProjection.dll" />
+        <file src="..\..\_build\x64\Release\ProtoWRC\bin\ProtoWRC\ProtoWRC.winmd" target="lib\netcoreapp3.0\ProtoWRC.winmd" />
+        <file src="..\..\_build\x64\Release\ProtoWRC\bin\ProtoWRC\ProtoWRC.winmd" target="lib\uap10.0\ProtoWRC.winmd" />
+        <file src="..\..\_build\x64\Release\ProtoWRC\bin\ProtoWRC\ProtoWRC.winmd" target="lib\net481\ProtoWRC.winmd" />
+        <!--Architecture-specific implementation DLLs should be copied into RID-relative folders-->
+        <file src="..\..\_build\x64\Release\ProtoWRC\bin\ProtoWRC\ProtoWRC.dll" target="runtimes\win-x64\native\ProtoWRC.dll" />
+        <!--To support x86 and Arm64, build ProtoWRC for those other architectures and uncomment the entries below.-->
+        <file src="..\..\_build\Win32\Release\ProtoWRC\bin\ProtoWRC\ProtoWRC.dll" target="runtimes\win-x86\native\ProtoWRC.dll" />
+        <file src="..\..\_build\arm64\Release\ProtoWRC\bin\ProtoWRC\ProtoWRC.dll" target="runtimes\win-arm64\native\ProtoWRC.dll" />
+    </files>
+</package>

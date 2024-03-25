@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ProtoProjection": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

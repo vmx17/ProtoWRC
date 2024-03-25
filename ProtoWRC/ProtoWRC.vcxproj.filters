@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>accd3aa8-1ba0-4223-9bbe-0c431709210b</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{926ab91d-31b4-48c3-b9a4-e681349f27f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{24f34ee8-23d8-4770-bb94-9028a80e0e64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Content">
+      <UniqueIdentifier>{463f4119-d27e-4dc9-bcfe-e89827e38320}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="Common\DeviceResources.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Content\Sample3DSceneRenderer.cpp">
+      <Filter>Content</Filter>
+    </ClCompile>
+    <ClCompile Include="Content\SampleFpsTextRenderer.cpp">
+      <Filter>Content</Filter>
+    </ClCompile>
+    <ClCompile Include="SpinningCubeMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Common\DeviceResources.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DirectXHelper.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\StepTimer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Content\Sample3DSceneRenderer.h">
+      <Filter>Content</Filter>
+    </ClInclude>
+    <ClInclude Include="Content\SampleFpsTextRenderer.h">
+      <Filter>Content</Filter>
+    </ClInclude>
+    <ClInclude Include="Content\ShaderStructures.h">
+      <Filter>Content</Filter>
+    </ClInclude>
+    <ClInclude Include="SpinningCubeMain.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="Dx11BackEnd.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ProtoWRC.def" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PropertySheet.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Content\SamplePixelShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+    <FxCompile Include="Content\SampleVertexShader.hlsl">
+      <Filter>Content</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
