@@ -2,34 +2,38 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <Platform>AnyCPU</Platform>
+    <UseRidGraph>true</UseRidGraph>
+    <!--<Platforms>x64;x86;arm64</Platforms>-->
+    <RuntimeIdentifiers>win-x64;win-x86;win-arm64</RuntimeIdentifiers>
+    <!-- Workaround for MSB3271 error on processor architecture mismatch -->
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-      <Platform>AnyCPU</Platform>
     <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
   </PropertyGroup>
-    <PropertyGroup>
-        <CsWinRTIncludes>ProtoWRC</CsWinRTIncludes>
-        <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
-    </PropertyGroup>
-    <PropertyGroup>
-        <GeneratedNugetDir>.\nuget\</GeneratedNugetDir>
-        <NuspecFile>$(GeneratedNugetDir)DxProjection.nuspec</NuspecFile>
-        <OutputPath>$(GeneratedNugetDir)</OutputPath>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    </PropertyGroup>
-    <PropertyGroup>
-        <!-- Workaround for MSB3271 error on processor architecture mismatch -->
-        <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
-    </PropertyGroup>
-    <ItemGroup>
-      <None Include="nuget\DxProjection.nuspec" />
-    </ItemGroup>
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <OutputPath>$(OutDir)</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CsWinRTIncludes>ProtoWRC</CsWinRTIncludes>
+    <CsWinRTGeneratedFilesDir>$(OutDir)</CsWinRTGeneratedFilesDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <GeneratedNugetDir>.\nuget\</GeneratedNugetDir>
+    <NuspecFile>$(GeneratedNugetDir)DxProjection.nuspec</NuspecFile>
+    <OutputPath>$(GeneratedNugetDir)</OutputPath>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="nuget\DxProjection.nuspec" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.0.7" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240311000" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\ProtoWRC\ProtoWRC.vcxproj" />
   </ItemGroup>
-
 </Project>
