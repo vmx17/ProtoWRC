@@ -1,4 +1,5 @@
 #pragma once
+#include <winrt/Windows.Graphics.Display.h>
 #include "Dx11BackEnd.g.h"
 
 #include "Common\StepTimer.h"

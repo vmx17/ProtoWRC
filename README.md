@@ -24,16 +24,18 @@ After all, here I show a rough answer. Using DirectX in C\++ but on C# XAML fram
 ## Usage
 This is a set of VisualStudio 2022 solution file using .Net8. The solution filename is "ProtoWRC.sln". It has three projects.  
 - "ProtoWRC": C\++ project that makes Windows Runtime Component (WRC) for DirectX except screen.
-- "ProtoProjection": C# project for Projection. No `*.cs` code. (It will be made automatically)
+- "DxProjection": C# project for Projection. No `*.cs` code. (It will be made automatically)
 - "WRCClient": C# project for application that consume DirectX back-end provided by "ProtoWRC".
 
 (1) Open solution file.  
 (2) restore NuGet packages for each project. (I recommend the newest stable release.)  
-(3) Build `x64`, `Release` and/or `Debug`. (The "ProtoProjection" is fixed as `AnyCPU`.)  
+(3) Build `x64`, `Release` and/or `Debug`. (The "DxProjection" is fixed as `AnyCPU`.)  
 (4) Run "WRCClient" with debugger. This is startup project.  
 (5) at the top of screen, push "DirectX" button. It may be hidden under debugger menu. Shrink it (sorry for my layout design).  
-(6) Now you can see spinning cube. That is drawn on `SwapChainPanel` located C# frame, by C\++ Windows Runtime Component. 
-You may need to add [Single-project MSIX Packaging Tools](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17) to your VisualStudio.
+(6) Now you can see spinning cube. That is drawn on `SwapChainPanel` located C# frame, by C\++ Windows Runtime Component.   
+- You may need to add [Single-project MSIX Packaging Tools](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17) to your VisualStudio.  
+- NuGet package will be made only 'Release|AnyCPU'.  
+- Even if you specify 'AnyCPU' the code built may only be 'x64'.
 
 ## What I did
 Though I use many hours, nothing new nor special. Just put `SwapChainPanel` to interact between C# and C\++ because Windows App SDK for both language has the `UIElement` commonly.  
