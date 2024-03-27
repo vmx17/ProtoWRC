@@ -17,7 +17,7 @@
             <Button Content="◀" Click="Button_Click_Prev"/>
             <Button Content="Empty" Click="Button_Click_1"/>
             <Button Content="DirectX" Click="Button_Click_2"/>
-            <Button Content="DirectN" Click="Button_Click_3"/>
+            <Button Content="(dummy)" Click="Button_Click_3"/>
             <Button Content="▶" Click="Button_Click_Next"/>
         </StackPanel>
         <Frame x:Name="PageFrame" Grid.Row="1"/>
