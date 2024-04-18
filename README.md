@@ -1,4 +1,4 @@
-# ProtoWRC: Using DirectX in C\++ on C# XAML desktop
+# ProtoWRC: Create Windows Runtime Component for DirectX 11 backend in C\++/WinRT and consume it from a C# app that uses the Windows App SDK
 
 ## Motivation
 Hi! I'm trying to make desktop application for drawing.  
